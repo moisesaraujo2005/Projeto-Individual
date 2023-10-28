@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssCadastro.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1 class="Home">
+           <a href="index.html">SKATE TECH</a> 
+        </h1>
+        <div class="campos">
+            <h1>
+                Cadastro
+            </h1>
+            
+            <div class="box-Input">
+            <input type="text" onkeyup="validarEmail()" id="input_email" name="email"  class="inputCadastro" required>
+            <label for="email" class="inputLabel">Email:</label>
+            <br><br>
+            </div>
+            <div class="box-Input">
+                <input type="tel" id="input_telefone" name="Telefone" class="inputCadastro" required>
+                <label for="Telefone" class="inputLabel">Telefone:</label>
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <input onkeyup="ValidarCampos()" type="password" name="senha" id="input_senha" class="inputCadastro" required>
+                <label for="senha" class="inputLabel">Senha:</label>
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <input type="password" onkeyup="ValidarCampos()" id="input_confirmarSenha" name="ConfirmarSenha"  required class="inputCadastro">
+                <label for="ConfirmarSenha" class="inputLabel">Confirmar Senha:</label>
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <label for="dataNascimento" >Data de nascimento:</label>
+                <input type="date" name="dataNascimento" id="dataNascimento" class="inputCadastro">
+                <br><br>
+            </div>
+            <p>Sexo:</p>
+            <input type="radio" name="Genero" value="Feminino" id="feminino">
+            <label for="feminino">Feminino  </label>
+            <br>
+            <input type="radio" name="Genero" value="Masculino" id="masculino">
+            <label for="masculino">Masculino </label>
+            <br>
+            <input type="radio" name="Genero" value="Outro" id="outro">
+            <label for="outro">Prefiro não especificar</label>
+            <br><br>
+
+
+            <label for="skatistaPreferido">Seu skatista preferido :</label>
+            <select name="" id="skatistaPreferido"> Skatista
+                <option value="1">Tiago Lemos</option>
+                <option value="2">Gabriel Fortunato</option>
+                <option value="3">Rayssa Leal</option>
+                <option value="4">Filipe Mota</option>
+                <option value="5">Yuto Horigome</option>
+                <option value="6">Kyonosuke</option>
+                <option value="7">Luan de Oliveira</option>
+                <option value="8">Outro</option>
+                <br><br>
+            </select>
+            <br>
+            <br>
+            <button onclick="VerificarCadastro()" type="submit" class="BotaoCadastrar">Cadastrar-se</button>
+        </div>
+        <div id="confirmar_senha"></div>
+        <div id="validar_senha"></div>
+        
+        
+    </main>
+</body>
+</html>
+<script>
+
+      
+</script>
