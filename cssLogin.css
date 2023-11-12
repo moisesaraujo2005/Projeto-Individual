@@ -1,6 +1,7 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 50, 50));
+  background-color: white;
+  background-image: url("https://encarando.com/uploads/images/202112/image_750x_61adec3f7499a.jpg");
 }
 
 a{
@@ -8,14 +9,16 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 h2 {
-    color:white;
+    color:rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .campos{
@@ -23,14 +26,37 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
     border-radius: 15px;
-    width: 22%;
-    color: rgb(235, 235, 235);
-    height: 40%;
+    width: 25%;
+    color: rgb(245, 245, 245);
+    height: 32%;
 
 }
+
+
+
+.skate{
+    height: 239px;
+    position: absolute;
+
+    
+    right: -80px;
+
+    animation: skate-animation 6s infinite linear;
+}
+
+@keyframes skate-animation {
+    from{
+        left: 0;
+    }
+    to {
+        left: 80%;
+    }
+}
+
+
 
 .box-input{
     position: relative;
@@ -77,4 +103,12 @@ color: rgb(231, 230, 230);
     top: -20px;
     font-size: 15px;
     color: rgb(255, 255, 255);
+}
+
+.div_email{
+    color: rgb(231, 81,81);
+}
+
+.div_senha{
+    color: rgb(231, 81, 81);
 }

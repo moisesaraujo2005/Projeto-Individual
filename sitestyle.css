@@ -1,6 +1,6 @@
 body{
     
-    background-image: linear-gradient(to right, rgb(53, 50, 50), rgb(0, 0, 0));
+    background-color: rgb(255, 255, 255);
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -14,6 +14,13 @@ body{
 
 
 
+    .skate{
+        height: 187px;
+        position: absolute;
+        right: 115%;
+        margin-top: -20px;
+    
+}    
 .header {
     width: 100%;
     display: flex;
@@ -31,7 +38,7 @@ body{
     transform: translate(-50%, -50%);
     height: auto;
     width: auto;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     z-index: 1;
 }
 
@@ -53,8 +60,8 @@ body{
 .campos {
     list-style: none;
     display: flex;
-    color: rgb(240, 240, 240);
-    gap: 40px;
+    color: rgb(0, 0, 0);
+    gap: 80px;
     align-items: center;
 }
 
@@ -64,7 +71,7 @@ body{
     font-weight: 600;
     font-family: "Halis GR";
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-size: 13px;
     margin: auto;
     letter-spacing: 1px;
@@ -75,7 +82,7 @@ body{
 
 
 .header h1 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-right: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -86,7 +93,7 @@ body{
 .slider{
     margin: 0 auto;
     width: 800px;
-    height: 400px;
+    height:528px;
     overflow: hidden;
     
 }
@@ -95,6 +102,7 @@ body{
     width: 400%;
     height: 400px;
     display: flex;
+    margin-top: 70px;
 }
 
 .slides input{
@@ -114,7 +122,9 @@ body{
 .manual-navigation{
     position: absolute;
     width: 800px;
-    margin-top: -40px;
+   
+   
+    margin-top: 35px;
     display: flex;
     justify-content: center;
 }
@@ -157,12 +167,13 @@ margin-left: -50%;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
+    
 }
 
 .navigation-auto {
     position: absolute;
     width: 800px;
-    margin-top: 360px;
+    margin-top: 434px;
     display: flex;
     justify-content: center;
 }
