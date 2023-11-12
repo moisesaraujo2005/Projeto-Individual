@@ -9,7 +9,7 @@
 <body>
     <main>
         <h1 class="Home">
-           <a href="index.html">SKATE TECH</a> 
+        <a href="index.html">SKATE TECH</a> 
         </h1>
         <div class="campos">
             <h1>
@@ -19,21 +19,26 @@
             <div class="box-Input">
             <input type="text" onkeyup="validarEmail()" id="input_email" name="email"  class="inputCadastro" required>
             <label for="email" class="inputLabel">Email:</label>
+            <div id="div_email"></div>
             <br><br>
             </div>
             <div class="box-Input">
                 <input type="tel" id="input_telefone" name="Telefone" class="inputCadastro" required>
                 <label for="Telefone" class="inputLabel">Telefone:</label>
+                <div id="div_telefone"></div>
                 <br><br>
             </div>
             <div class="box-Input">
-                <input onkeyup="ValidarCampos()" type="password" name="senha" id="input_senha" class="inputCadastro" required>
+                <input type="password" name="senha" id="input_senha" class="inputCadastro" required>
                 <label for="senha" class="inputLabel">Senha:</label>
+                <div id="div_senha"></div>
+                
                 <br><br>
             </div>
             <div class="box-Input">
-                <input type="password" onkeyup="ValidarCampos()" id="input_confirmarSenha" name="ConfirmarSenha"  required class="inputCadastro">
+                <input type="password"  id="input_confirmarSenha" name="ConfirmarSenha"  required class="inputCadastro">
                 <label for="ConfirmarSenha" class="inputLabel">Confirmar Senha:</label>
+                <div id="senha_nãoBate"></div>
                 <br><br>
             </div>
             <div class="box-Input">
@@ -62,7 +67,7 @@
                 <option value="5">Yuto Horigome</option>
                 <option value="6">Kyonosuke</option>
                 <option value="7">Luan de Oliveira</option>
-                <option value="8">Outro</option>
+                <option id="option_outro" value="8">Outro</option>
                 <br><br>
             </select>
             <br>
@@ -71,12 +76,50 @@
         </div>
         <div id="confirmar_senha"></div>
         <div id="validar_senha"></div>
+        <div id="div_exibir"></div>
         
         
     </main>
 </body>
 </html>
 <script>
+    
+    function VerificarCadastro() {
+        var Senha= input_senha.value 
+        var email= input_email.value 
+        var ConfirmarSenha= input_confirmarSenha.value 
+        var Telefone=input_telefone.value 
+        
+        if(email.indexOf('@')==-1) {
+            div_email.innerHTML=`Email inválido`
+        if(Senha!=confirmar_senha) {
+            senha_nãoBate.innerHTML=`Senhas não batem`
+            if(Senha.length<8){
+                div_senha.innerHTML=`Senha tem que ter mais de 8 caracteres`
+                if(Telefone.length<11){
+                    div_telefone.innerHTML=`Telefone tem que ter mais de 11 digitos`
+                }
+            
 
-      
+            }}}
+        else {
+            VerificarCadastro=true 
+            alert(`Cadastrado com sucesso`)
+            location.href='index.html'
+        }
+        
+        
+        
+        } 
+    
+    
+
+
+
+
+
+
+    
+
+    
 </script>

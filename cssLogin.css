@@ -2,10 +2,20 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(51, 50, 50));
 }
+
 a{
-    color: rgb(255, 255, 255);
     text-decoration: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+h2 {
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .campos{
@@ -18,13 +28,31 @@ a{
     border-radius: 15px;
     width: 22%;
     color: rgb(235, 235, 235);
+    height: 40%;
+
 }
 
-.box-Input{
+.box-input{
     position: relative;
 }
+.botaoLogin {
+width: 100%;
+font-size: 18px;
+cursor: pointer;
+background-color: rgb(255, 255, 255);
+color: rgb(2, 2, 2);
+padding: 5px;
+border-radius: 10px;
+transition: background 0.5s;
 
-.inputCadastro{
+
+}
+
+.botaoLogin:hover {
+background-color: rgb(73, 72, 72);
+color: rgb(231, 230, 230);
+}
+.inputLogin{
     background: none;
     border: 10px;
     border-bottom: 1px solid white;
@@ -32,38 +60,9 @@ a{
     color: white;
     font-size: 15px;
     letter-spacing: 2px;
-    
+    margin-top: 30px;
 }
 
-
-#dataNascimento {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    height: 30px;
-}
-
-h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.BotaoCadastrar {
-    width: 100%;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(2, 2, 2);
-    padding: 5px;
-    border-radius: 10px;
-    transition: background 0.5s;
-    }
-
-.BotaoCadastrar:hover {
-    background-color: rgb(73, 72, 72);
-    color: rgb(231, 230, 230);
-}
 
 .inputLabel{
     position: absolute;
@@ -73,14 +72,9 @@ h1{
     transition: .5s;
 }
 
-.inputCadastro:focus ~ .inputLabel,
-.inputCadastro:valid ~ .inputLabel{
+.inputLogin:focus ~ .inputLabel,
+.inputLogin:valid ~ .inputLabel{
     top: -20px;
     font-size: 15px;
     color: rgb(255, 255, 255);
 }
-
-
-
-
-
