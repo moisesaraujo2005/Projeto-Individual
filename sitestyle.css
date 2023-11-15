@@ -1,29 +1,24 @@
 body{
     
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
-    padding: 0;
+    background: linear-gradient(to right, rgb(34, 34, 34), rgb(99, 98, 98));
     margin: 0;
-    align-items: center;
+    padding: 0;
     height: 100vh;
     width: 100%;
-    display: flex;
+   
+   
     }
 
 
 
 
 
-    .skate{
-        height: 187px;
-        position: absolute;
-        right: 115%;
-        margin-top: -20px;
     
-}    
+    
+ 
 .header {
     width: 100%;
-    display: flex;
+  
     margin-bottom: 80px;
 }
 
@@ -38,29 +33,21 @@ body{
     transform: translate(-50%, -50%);
     height: auto;
     width: auto;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     z-index: 1;
 }
 
-.header .container .logo img {
-    width: 50px;
-    height: 50px;
-    margin-top: 20px;
-}
 
 
 
-.header .logo {
-    display: flex;
-    justify-content: center;
-    
-}
+
+
 
 
 .campos {
     list-style: none;
     display: flex;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     gap: 80px;
     align-items: center;
 }
@@ -71,7 +58,7 @@ body{
     font-weight: 600;
     font-family: "Halis GR";
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 13px;
     margin: auto;
     letter-spacing: 1px;
@@ -82,7 +69,7 @@ body{
 
 
 .header h1 {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-right: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -95,6 +82,9 @@ body{
     width: 800px;
     height:528px;
     overflow: hidden;
+    margin-top: 11%;
+    
+    
     
 }
 
@@ -103,6 +93,7 @@ body{
     height: 400px;
     display: flex;
     margin-top: 70px;
+    
 }
 
 .slides input{
@@ -111,7 +102,7 @@ body{
 
 .slide{
     width: 25%;
-    position: relative;
+  
     transition: 2s;
 }
 
@@ -124,7 +115,7 @@ body{
     width: 800px;
    
    
-    margin-top: 35px;
+    margin-top: 434px;
     display: flex;
     justify-content: center;
 }
@@ -171,7 +162,7 @@ margin-left: -50%;
 }
 
 .navigation-auto {
-    position: absolute;
+    
     width: 800px;
     margin-top: 434px;
     display: flex;
@@ -193,4 +184,130 @@ margin-left: -50%;
 }
 #radio4:checked ~ .navigation-auto .auto-btn4 {
     background-color: #ffffff;
+}
+
+
+.skate{
+    
+    width: 200px;
+    right: -80px;
+    position: absolute;
+    animation: skate-animation 7s infinite linear;
+}
+
+
+
+
+@keyframes skate-animation {
+    from{
+        left: 0;
+    }
+    to {
+        left: 80%;
+    } }
+
+.Sobre {
+    display: flex;
+    font-size: large;
+    width: 30%;
+    padding: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 84%;
+    color: white;
+    margin-top: -70px;
+   
+}
+
+.Curiosidades{
+   
+    display: flex;
+    font-size: large;
+    width: 30%;
+   color: white;
+    height: 84%;
+    position: relative;
+    left: 69%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.TituloCuriosidades{
+    display: flex;
+    position: absolute;
+    left: 69%;
+    color: white;
+   margin-top: -50px;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    margin-top: 7vh;
+}
+
+.icon{
+    width: 250px;
+    height: 250px;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px;
+    margin-left: 32px;
+   
+}
+
+.card button {
+    margin-top: 30px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase; 
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.card h3{
+    margin:16px 0;
+    color: white;
+}
+.card span{
+    color: white;
+}
+.tituloSobre{
+    margin-top: 20vh;
+    padding: 32px;
+}
+.social h1{
+    color: white;
+   
+}
+
+
+#cards{
+    transition: 300ms;
+    animation: 3s;
+    scroll-behavior: smooth;
+}
+
+#CardsLentidao{
+    transition: 300ms;
+    scroll-behavior: smooth;
+}
+
+.card button:hover{
+    transition: 850ms;
+    background-color: rgb(65, 65, 65);
+    color: rgb(221, 212, 212);
 }

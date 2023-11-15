@@ -64,6 +64,7 @@ h1{
 .BotaoCadastrar:hover {
     background-color: rgb(73, 72, 72);
     color: rgb(231, 230, 230);
+    transition: 650ms;
 }
 
 .inputLabel{

@@ -1,0 +1,25 @@
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Sobre{
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+   
+}
+.videos{
+    display: flex;
+}
+.videoPrimeiraManobra{
+  
+    width: 300px;
+}
+
+.SalomaoAndando{
+    width: 300px;
+    left: 80%;
+    display: flex;
+    position: relative
+}

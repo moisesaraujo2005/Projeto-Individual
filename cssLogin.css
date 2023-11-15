@@ -1,7 +1,7 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: white;
-  background-image: url("https://encarando.com/uploads/images/202112/image_750x_61adec3f7499a.jpg");
+  background-image: url("https://images2.alphacoders.com/255/255812.jpg");
 }
 
 a{
@@ -77,6 +77,7 @@ transition: background 0.5s;
 .botaoLogin:hover {
 background-color: rgb(73, 72, 72);
 color: rgb(231, 230, 230);
+transition: 750ms;
 }
 .inputLogin{
     background: none;

@@ -24,9 +24,9 @@
             <ul class="campos">
                 
                 
-                <li> <a href="#sobremim">Sobre mim</a></li>
+                <li> <a href="sobremim.html">Sobre mim</a></li>
                 <li><span>|</span></li>
-                <li> <a href="#skatistas">Skatistas </a></li>
+                <li> <a href="#cards" id="CardsLentidao">Skatistas </a></li>
                 <li><span> |</span></li>
                 <li><a class= "login" href="login.html"><span>Login</span></a></li>
                 <li><span>|</span></li>
@@ -34,6 +34,7 @@
             </ul>
 
         </div>
+    </div>
         
 
     <div class="slider">
@@ -70,7 +71,7 @@
             <div class="auto-btn3"></div>
             <div class="auto-btn4"></div>
     </div>
-</div>
+
 
 
     <div class="manual-navigation">
@@ -80,9 +81,96 @@
         <label for="radio4" class="manual-btn"></label>
     </div>
 </div>
+</div>
+    <div class="social">
+       
+        <h1 class="tituloSobre">
+            Sobre:
+        </h1>
+        <div class="Sobre">
+            
+            O skate surgiu nos Estados Unidos, em processo ao longo da primeira metade do século 20. Acredita-se que a modalidade possa ter derivado dos rollers scooters, espécie de patinete fabricado a partir de 1900. Recentemente, também se descobriu que, em 1918, um então garoto norte-americano chamado de Doc "Heath" Ball já havia desmontado eixos e rodas de patins e fixado em uma madeira. No entanto, ele não andava de pé, mas com um joelho apoiado na madeira e outro pé dando impulso. No final dos anos 50, quando não havia ondas no litoral da Califórnia, surfistas tentavam imitar as manobras que faziam na água usando rodas e eixos fixados em pranchas de madeira.
+            
+        </div>
+        <h1 class="TituloCuriosidades">
+            Curiosidades:
+        </h1>
+        <div class="Curiosidades">
+          
+            
+        
+                - O primeiro skate fabricado e comercializado em série foi o Roller Derby, em 1959;
+    - O skate chegou no Brasil nos anos 60, primeiro no Rio de Janeiro, provavelmente trazido por filhos de norte-americanos e pelos brasileiros que viajavam para os Estados Unidos na época, principalmente por aqueles que estavam começando a surfar no Brasil;
+    - Incentivados pelos anúncios da revista norte-americana Surfer, o surfinho, como era chamado na época, era feito com eixos de patins pregados em madeira e rodas de borracha ou de ferro.
+            
+            
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="game-board">
+        <img src="./Assets/Imagens/skatista-removebg-preview.png" class="skate">
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div class="cards" id="cards">
+        <section class="card"> 
+            <div class="icon">
+            <img src="Assets/Imagens/63f38ccb3ac9eLuanOliveira-270x270.jpg" alt="Luan De Oliveira">
+        </div>
+            <h3>Luan de Oliveira</h3>
+            <span>Luan Vilanova de Oliveira mais conhecido como Luan Oliveira (Porto Alegre, 22 de setembro de 1990) é um skatista profissional brasileiro e um dos mais influentes skatistas da sua geração de skaters no Brasil</span>
+            <br>
+            <div id="div_luanOliveira"  style="color: white;"></div>
+            <button onclick="LuanOliveira()">Mais</button>
+            
+        </section>
+        <section class="card">
+            <div class="icon">
+            <img src="Assets/Imagens/tiago lemos.jpg" alt="Tiago Lemos">
+        </div>
+            <h3>Tiago Lemos</h3>
+            <span>Skatista profissional conhecido por seus vídeos de manobras e suas atuações em diversas competições. Já foi patrocinado por DC Shoes, Mountain Dew, Grizzly Grip e Diamond.</span> 
+            <br>
+            <div id="div_TiagoLemos" style="color: white;"></div>
+            <button onclick="TiagoLemos()">Mais</button>
+            
+        </section>
+        <section class="card">
+            <div class="icon">
+            <img src="Assets/Imagens/real.jpg" alt="Gabiel fortunato">
+        </div>
+            <h3>Gabriel Fortunato</h3>
+            <span>Skatista brasileiro conhecido por postar vários clipes andando de skate para os seus mais de 330.000 seguidores no Instagram. Ele já foi patrocinado por diversas empresas, como Monster Energy e Nike SB.</span>
+            <div id="div_GabrielFortunato" style="color: white;"></div>
+            <button onclick="GabrielFortunato()">Mais</button>
+            
+            </section>
+    </div>
 
 <script src="scriptCarrosel.js">
 
+</script>
+<script>
+    function LuanOliveira() {
+        div_luanOliveira.innerHTML=`Em sua primeira participação nos Street League no skate street (já tinha participado dos X Games no skate real street), Luan conseguiu a segunda colocação. <br> Na primeira linha da disputa, Luan estava praticamente sem chance de classificação, quando em sua última volta, acertou uma linha composta de: nollie backside flip seguido de um extenso frontside flip sobre o corrimão, o que o ajudou a garantir sua vaga na grande final ao lado de Nyjah Huston, Ryan Decenzo, Ryan Sheckler e Chaz Ortiz. <br>
+Na grande final, Luan não conseguiu sair melhor que Nyjah Huston e ficou com o segundo lugar, já a terceira colocação ficou com Ryan Sheckler.
+Em 2015, Luan inicia o ano ganhando o Tampa Pro (um dos mais tradicionais campeonatos de skate street) pela segunda vez, após isso venceu também a segunda etapa da Street League, em los angeles, e na terceira etapa em New Jersey, conquistou o bi-campeonato, com Nyjah Huston em segundo e o brasileiro estreante Kelvin Hoefler em terceiro.`
+    }
+
+    function TiagoLemos() {
+        div_TiagoLemos.innerHTML=`Tiago Lemos é um skatista profissional que conseguiu, com base em suas habilidades, estilo único e manobras impactantes, ser um dos principais skatistas brasileiros. Para se ter uma ideia, mesmo sendo novo e estando em “início” de carreira, Tiago conquistou o prêmio de Skatista do Ano em 2015. 
+
+Essa pesquisa foi feita pela Revista CemporcentoSKATE, que abriu uma votação online, onde os internautas tinham que eleger o melhor do ano e, é claro, o título não poderia ter ido para outra pessoa. 
+
+Essa e as demais conquistas que Tiago Lemos conseguiu foram alcançadas devido ao seu talento nato, porém, também à sua trajetória repleta de dedicação ao esporte. 
+
+`
+    }
+    function GabrielFortunato() {
+        div_GabrielFortunato.innerHTML=`O skatista Gabriel Fortunato, de 14 anos, é a nova sensação do skate no Alto Tietê. Nascido em Mogi das Cruzes, o garoto, que atualmente mora em Suzano com a mãe, uma irmã e o irmão Davison, de 20 anos, já conta com dois patrocínios e está prestes a fechar o terceiro com uma das maiores empresas esportivas do mundo`
+    }
+
+    
 </script>
 
 </body>

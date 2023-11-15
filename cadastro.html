@@ -17,7 +17,7 @@
             </h1>
             
             <div class="box-Input">
-            <input type="text" onkeyup="validarEmail()" id="input_email" name="email"  class="inputCadastro" required>
+            <input type="text"  id="input_email" name="email"  class="inputCadastro" required>
             <label for="email" class="inputLabel">Email:</label>
             <div id="div_email"></div>
             <br><br>
@@ -56,22 +56,15 @@
             <input type="radio" name="Genero" value="Outro" id="outro">
             <label for="outro">Prefiro não especificar</label>
             <br><br>
+            Você é skatista?
+            <input type="radio" name="skatista" value="SkatistaSim" id="skatistaSim" onclick="SimOuNão()">
+            <label for="skatista">Sim</label>
+            <input type="radio" nome="skatistaNão" value="SkatistaNão" id="SkatistaNão">
+            <label for="skatistaNão">Não</label>
 
-
-            <label for="skatistaPreferido">Seu skatista preferido :</label>
-            <select name="" id="skatistaPreferido"> Skatista
-                <option value="1">Tiago Lemos</option>
-                <option value="2">Gabriel Fortunato</option>
-                <option value="3">Rayssa Leal</option>
-                <option value="4">Filipe Mota</option>
-                <option value="5">Yuto Horigome</option>
-                <option value="6">Kyonosuke</option>
-                <option value="7">Luan de Oliveira</option>
-                <option id="option_outro" value="8">Outro</option>
-                <br><br>
-            </select>
+           <div id="div_exibirSkatista"></div>
             <br>
-            <br>
+            
             <button onclick="VerificarCadastro()" type="submit" class="BotaoCadastrar">Cadastrar-se</button>
         </div>
         <div id="confirmar_senha"></div>
@@ -83,6 +76,21 @@
 </body>
 </html>
 <script>
+    function SimOuNão() {
+        var skatistaSimm= skatistaSim.value 
+        div_exibirSkatista.innerHTML=` <label for="skatistaPreferido">Seu skatista preferido :</label>
+            <select name="" id="skatistaPreferido" onchange=""> Skatista
+                <option value="1">Tiago Lemos</option>
+                <option value="2">Gabriel Fortunato</option>
+                <option value="3">Rayssa Leal</option>
+                <option value="4">Filipe Mota</option>
+                <option value="5">Yuto Horigome</option>
+                <option value="6">Kyonosuke</option>
+                <option value="7">Luan de Oliveira</option>
+                <option id="option_outro" value="8">Outro</option>
+                <br><br>
+            </select>`
+    }
     
     function VerificarCadastro() {
         var Senha= input_senha.value 
@@ -90,27 +98,29 @@
         var ConfirmarSenha= input_confirmarSenha.value 
         var Telefone=input_telefone.value 
         
-        if(email.indexOf('@')==-1) {
-            div_email.innerHTML=`Email inválido`
-        if(Senha!=confirmar_senha) {
-            senha_nãoBate.innerHTML=`Senhas não batem`
-            if(Senha.length<8){
-                div_senha.innerHTML=`Senha tem que ter mais de 8 caracteres`
-                if(Telefone.length<11){
+        if(email=='' && Senha=='' && ConfirmarSenha=='' && Telefone=='') {
+            alert(`Reveja suas informaçoes`)
+        }
+         else if(email.indexOf('@')==-1) {
+            div_email.innerHTML=`Email inválido`}
+            else if(Telefone.length<11){
+                    
                     div_telefone.innerHTML=`Telefone tem que ter mais de 11 digitos`
+                    
+                }
+                else  if(Senha.length<8){
+                div_senha.innerHTML=`Senha tem que ter mais de 8 caracteres`}
+            
+       else if(Senha!=confirmar_senha) {
+            senha_nãoBate.innerHTML=`Senhas não batem`}
+         
+                else { 
+                    alert(`Cadastrado com sucesso!`)
+                    location.href='login.html'
                 }
             
 
-            }}}
-        else {
-            VerificarCadastro=true 
-            alert(`Cadastrado com sucesso`)
-            location.href='index.html'
-        }
-        
-        
-        
-        } 
+            }
     
     
 
