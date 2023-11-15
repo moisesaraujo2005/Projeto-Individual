@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cssCadastro.css">
+    <link rel="stylesheet" href="CSS/cssCadastro.css">
     <title>Document</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
             Você é skatista?
             <input type="radio" name="skatista" value="SkatistaSim" id="skatistaSim" onclick="SimOuNão()">
             <label for="skatista">Sim</label>
-            <input type="radio" nome="skatistaNão" value="SkatistaNão" id="SkatistaNão">
+            <input type="radio" nome="skatista" value="SkatistaNão" id="SkatistaNão">
             <label for="skatistaNão">Não</label>
 
            <div id="div_exibirSkatista"></div>
@@ -113,13 +113,11 @@
             
        else if(Senha!=confirmar_senha) {
             senha_nãoBate.innerHTML=`Senhas não batem`}
-         
-                else { 
-                    alert(`Cadastrado com sucesso!`)
-                    location.href='login.html'
-                }
+         else {
+          alert(`Cadastrado com Sucesso`)
+          location.href="login.html"
             
-
+}
             }
     
     

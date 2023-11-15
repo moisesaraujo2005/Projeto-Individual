@@ -1,6 +1,6 @@
 body{
     
-    background: linear-gradient(to right, rgb(34, 34, 34), rgb(99, 98, 98));
+    background: linear-gradient(to right, rgb(15, 15, 15), rgb(66, 61, 61));
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -228,6 +228,7 @@ margin-left: -50%;
     position: relative;
     left: 69%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10%;
 }
 
 .TituloCuriosidades{
@@ -236,8 +237,17 @@ margin-left: -50%;
     left: 69%;
     color: white;
    margin-top: -50px;
+   margin-top: 7%;
 }
-
+.imgGrafite{
+    display: flex;
+    left: 69%;
+    position: absolute;
+    
+    margin-top: -12%;
+  
+    height: 200px;
+}
 .cards{
     display: flex;
     justify-content: center;
@@ -310,4 +320,12 @@ margin-left: -50%;
     transition: 850ms;
     background-color: rgb(65, 65, 65);
     color: rgb(221, 212, 212);
+}
+
+.imgGrafite2{
+    display: flex;
+    position: absolute;
+    padding: 32px;
+    margin-top: -25vh;
+    height: 258px;
 }
