@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/cssCadastro.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="Home">
+            <a href="index.html">SKATE TECH</a>
+        </h1>
+        <div class="campos">
+            <h1>
+                Cadastro
+            </h1>
+            <div class="box-Input">
+                <input type="text" id="input_nome" name="nome" class="inputCadastro" required>
+                <label for="nome" class="inputLabel">Nome:</label>
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <input type="text" id="input_email" name="email" class="inputCadastro" required>
+                <label for="email" class="inputLabel">Email:</label>
+                <div id="div_email"></div>
+                <br><br>
+            </div>
+
+            <div class="box-Input">
+                <input type="password" name="senha" id="input_senha" class="inputCadastro" required>
+                <label for="senha" class="inputLabel">Senha:</label>
+                <div id="div_senha"></div>
+
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <input type="password" id="input_confirmarSenha" name="ConfirmarSenha" required class="inputCadastro">
+                <label for="ConfirmarSenha" class="inputLabel">Confirmar Senha:</label>
+                <div id="senha_nãoBate"></div>
+                <br><br>
+            </div>
+            <div class="box-Input">
+                <label for="dataNascimento">Data de nascimento:</label>
+                <input type="date" name="dataNascimento" id="dataNascimento" class="inputCadastro">
+                <br><br>
+            </div>
+
+            <div class="select">
+                <p>Você é skatista?</p>
+                <select id="skatista_select">
+                   
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div id="div_exibirSkatista"></div>
+            <br>
+
+            <button onclick="VerificarCadastro()" type="submit" class="BotaoCadastrar">Cadastrar-se</button>
+        </div>
+        <div id="confirmar_senha"></div>
+        <div id="validar_senha"></div>
+        <div id="div_exibir"></div>
+
+
+    </main>
+</body>
+
+</html>
+<script>
+
+
+    function VerificarCadastro() {
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_confirmarSenha.value;
+        var dataNascimentoVar = dataNascimento.value;
+        var selectskatistaVar = skatista_select.value;
+  // if (email == '' && Senha == '' && ConfirmarSenha == '' && Telefone == '') {
+        //     alert(`Reveja suas informaçoes`)
+        // }
+        // else if (email.indexOf('@') == -1) {
+        //     div_email.innerHTML = `Email inválido`
+        // }
+        // else if (Telefone.length < 11) {
+
+        //     div_telefone.innerHTML = `Telefone tem que ter mais de 11 digitos`
+
+        // }
+        // else if (Senha.length < 8) {
+        //     div_senha.innerHTML = `Senha tem que ter mais de 8 caracteres`
+        // }
+
+        // else if (Senha != confirmar_senha) {
+        //     senha_nãoBate.innerHTML = `Senhas não batem`
+        // }
+        // else {
+        //     alert(`Cadastrado com Sucesso`)
+        //     location.href = "login.html"
+
+        // }
+      
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                dataNascimentoServer: dataNascimentoVar,
+                skatistaServer: selectskatistaVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+             
+               
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        
+        });
+
+        return false;
+    }
+
+
+
+
+
+</script>

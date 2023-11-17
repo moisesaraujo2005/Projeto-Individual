@@ -226,7 +226,7 @@ margin-left: -50%;
    color: white;
     height: 84%;
     position: relative;
-    left: 69%;
+    left: 58%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 10%;
 }
@@ -234,14 +234,14 @@ margin-left: -50%;
 .TituloCuriosidades{
     display: flex;
     position: absolute;
-    left: 69%;
+    left: 58%;
     color: white;
    margin-top: -50px;
    margin-top: 7%;
 }
 .imgGrafite{
     display: flex;
-    left: 69%;
+    left: 58%;
     position: absolute;
     
     margin-top: -12%;
