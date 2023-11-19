@@ -48,13 +48,22 @@
                 <input type="date" name="dataNascimento" id="dataNascimento" class="inputCadastro">
                 <br><br>
             </div>
-          
+            <div class="box-Input">
+                <span>Escolha seu sexo:</span>
+                <br>
+                <input type="radio" name="sexo" id="Masculino" value="Masculino">
+                <label for="Masculino">Masculino:</label>
+                <input type="radio" name="sexo" id="Feminino" value="Feminino">
+                <label for="Feminino">Feminino:</label>
+                <input type="radio" name="sexo" id="Outro" value="Outro">
+                <label for="Outro">Outro:</label>
+            </div>
             <div class="select">
                 <p>Você é skatista?</p>
                 <select id="skatista_select">
 
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Nao">Não</option>
                 </select>
             </div>
 
@@ -82,7 +91,8 @@
         var confirmacaoSenhaVar = input_confirmarSenha.value;
         var dataNascimentoVar = dataNascimento.value;
         var selectskatistaVar = skatista_select.value;
-        if (emailVar == '' && senhaVar == '' && confirmacaoSenhaVar == '' && nomeVar == '') {
+        var sexoEscolhidoVar = document.querySelector('input[name="sexo"]:checked').value;
+        if (emailVar == '' && senhaVar == '' && confirmacaoSenhaVar == '' && nomeVar == '' && sexoEscolhidoVar=='') {
             alert(`Reveja suas informaçoes`)
         }
         else if (nomeVar.length < 1) {
@@ -118,7 +128,9 @@
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 dataNascimentoServer: dataNascimentoVar,
-                skatistaServer: selectskatistaVar
+                sexoEscolhidoServer:sexoEscolhidoVar,
+                skatistaServer: selectskatistaVar,
+              
 
             })
         }).then(function (resposta) {
@@ -126,11 +138,13 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
+                alert(`Cadastrado com Sucesso`)
 
                 window.location = "login.html";
 
 
             } else {
+                alert(`Erro ao cadastrar`)
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
