@@ -1,6 +1,6 @@
 body{
     
-    background: linear-gradient(to right, rgb(15, 15, 15), rgb(66, 61, 61));
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(107, 103, 103));
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -214,7 +214,9 @@ margin-left: -50%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 84%;
     color: white;
-    margin-top: -70px;
+    margin-top: -48px;
+    position: relative;
+    left: 13%;
    
 }
 
@@ -236,8 +238,9 @@ margin-left: -50%;
     position: absolute;
     left: 58%;
     color: white;
-   margin-top: -50px;
-   margin-top: 7%;
+  
+   margin-top: 6%;
+   font-size: 45px;
 }
 .imgGrafite{
     display: flex;
@@ -296,8 +299,9 @@ margin-left: -50%;
     color: white;
 }
 .tituloSobre{
-    margin-top: 20vh;
-    padding: 32px;
+    margin-top: 25vh;
+    margin-left: 15%;
+    font-size: 45px;
 }
 .social h1{
     color: white;
@@ -329,3 +333,4 @@ margin-left: -50%;
     margin-top: -25vh;
     height: 258px;
 }
+

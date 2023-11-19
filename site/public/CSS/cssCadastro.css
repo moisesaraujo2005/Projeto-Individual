@@ -95,3 +95,9 @@ h1{
     transition: 650ms;
 }
 
+
+#dataNascimento:hover{
+    background-color: rgb(73, 72, 72);
+    color: white;
+    transition: 650ms;
+}

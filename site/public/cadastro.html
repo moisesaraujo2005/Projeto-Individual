@@ -20,6 +20,7 @@
             <div class="box-Input">
                 <input type="text" id="input_nome" name="nome" class="inputCadastro" required>
                 <label for="nome" class="inputLabel">Nome:</label>
+                <div id="div_nome"></div>
                 <br><br>
             </div>
             <div class="box-Input">
@@ -47,11 +48,11 @@
                 <input type="date" name="dataNascimento" id="dataNascimento" class="inputCadastro">
                 <br><br>
             </div>
-
+          
             <div class="select">
                 <p>Você é skatista?</p>
                 <select id="skatista_select">
-                   
+
                     <option value="sim">Sim</option>
                     <option value="nao">Não</option>
                 </select>
@@ -81,30 +82,31 @@
         var confirmacaoSenhaVar = input_confirmarSenha.value;
         var dataNascimentoVar = dataNascimento.value;
         var selectskatistaVar = skatista_select.value;
-  // if (email == '' && Senha == '' && ConfirmarSenha == '' && Telefone == '') {
-        //     alert(`Reveja suas informaçoes`)
-        // }
-        // else if (email.indexOf('@') == -1) {
-        //     div_email.innerHTML = `Email inválido`
-        // }
-        // else if (Telefone.length < 11) {
+        if (emailVar == '' && senhaVar == '' && confirmacaoSenhaVar == '' && nomeVar == '') {
+            alert(`Reveja suas informaçoes`)
+        }
+        else if (nomeVar.length < 1) {
 
-        //     div_telefone.innerHTML = `Telefone tem que ter mais de 11 digitos`
+            div_nome.innerHTML = `nome tem que ter mais de 1 digitos`
 
-        // }
-        // else if (Senha.length < 8) {
-        //     div_senha.innerHTML = `Senha tem que ter mais de 8 caracteres`
-        // }
+        }
+        else if (emailVar.indexOf('@') == -1) {
+            div_email.innerHTML = `Email inválido`
+        }
 
-        // else if (Senha != confirmar_senha) {
-        //     senha_nãoBate.innerHTML = `Senhas não batem`
-        // }
-        // else {
-        //     alert(`Cadastrado com Sucesso`)
-        //     location.href = "login.html"
+        else if (senhaVar.length < 8) {
+            div_senha.innerHTML = `Senha tem que ter mais de 8 caracteres`
+        }
 
-        // }
-      
+        else if (senhaVar != confirmacaoSenhaVar) {
+            senha_nãoBate.innerHTML = `Senhas não batem`
+        }
+        else {
+            alert(`Cadastrado com Sucesso`)
+            location.href = "login.html"
+
+        }
+
 
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -124,16 +126,16 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-               
+
                 window.location = "login.html";
-             
-               
+
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-        
+
         });
 
         return false;
