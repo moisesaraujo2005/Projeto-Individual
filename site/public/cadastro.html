@@ -71,6 +71,9 @@
             <br>
 
             <button onclick="VerificarCadastro()" type="submit" class="BotaoCadastrar">Cadastrar-se</button>
+            <div id="div_aguardar" class="loading-div">
+                <img src="Assets/Imagens/gif.gif" id="loading-gif">
+            </div>
         </div>
         <div id="confirmar_senha"></div>
         <div id="validar_senha"></div>
@@ -92,30 +95,25 @@
         var dataNascimentoVar = dataNascimento.value;
         var selectskatistaVar = skatista_select.value;
         var sexoEscolhidoVar = document.querySelector('input[name="sexo"]:checked').value;
-        if (emailVar == '' && senhaVar == '' && confirmacaoSenhaVar == '' && nomeVar == '' && sexoEscolhidoVar=='') {
-            alert(`Reveja suas informaçoes`)
-        }
-        else if (nomeVar.length < 1) {
+        aguardar();
 
-            div_nome.innerHTML = `nome tem que ter mais de 1 digitos`
 
-        }
-        else if (emailVar.indexOf('@') == -1) {
-            div_email.innerHTML = `Email inválido`
-        }
+console.log("FORM LOGIN: ", emailVar);
+console.log("FORM SENHA: ", senhaVar);
 
-        else if (senhaVar.length < 8) {
-            div_senha.innerHTML = `Senha tem que ter mais de 8 caracteres`
-        }
+// TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+if (emailVar == "" || senhaVar == "") {
+    window.alert("Preencha todos os campos para prosseguir!");
+    finalizarAguardar();
+    return false;
+}
 
-        else if (senhaVar != confirmacaoSenhaVar) {
-            senha_nãoBate.innerHTML = `Senhas não batem`
-        }
-        else {
-            alert(`Cadastrado com Sucesso`)
-            location.href = "login.html"
+if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+    window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+    finalizarAguardar();
+    return false;
+}
 
-        }
 
 
         fetch("/usuarios/cadastrar", {
@@ -135,27 +133,61 @@
             })
         }).then(function (resposta) {
 
-            console.log("resposta: ", resposta);
+console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-                alert(`Cadastrado com Sucesso`)
+if (resposta.ok) {
+    window.alert("Cadastro realizado com sucesso!");
+    window.location = "login.html";
+    limparFormulario();
+    finalizarAguardar();
+} else {
+    throw ("Houve um erro ao tentar realizar o cadastro!");
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+finalizarAguardar();
+});
 
-                window.location = "login.html";
+return false;
+}
+    function aguardar() {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "flex";
+}
 
+function finalizarAguardar(texto) {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "none";
 
-            } else {
-                alert(`Erro ao cadastrar`)
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
+    var divErrosLogin = document.getElementById("div_erros_login");
+    if (texto) {
+        divErrosLogin.innerHTML = texto;
+    {}
+    }}
+    function validarSessao() {
+    aguardar();
 
-        });
+    var login = sessionStorage.LOGIN_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
 
-        return false;
+    var h1Titulo = document.getElementById("h1_titulo");
+
+    if (login != null && nome != null) {
+        // window.alert(`Seja bem-vindo, ${nome}!`);
+        h1Titulo.innerHTML = `${login}`;
+
+        finalizarAguardar();
+    } else {
+        window.location = "login.html";
     }
+}
 
-
+function sair() {
+    aguardar();
+    sessionStorage.clear();
+    finalizarAguardar();
+    window.location = "login.html";
+}
 
 
 

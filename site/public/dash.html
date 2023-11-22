@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métrica</title>
+    <link rel="shortcut icon" href="assests2/assets/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="CSS/dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dash</title>
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Skatista', ''],
+                ['Sim', Number(sessionStorage.SKATISTA)],
+                ['Não', Number(sessionStorage.NOSKATISTA)],
+
+            ]);
+
+            var options = {
+                title: 'Quantidade de skatista'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+
+    <script>
+        function funcskatista() {
+            fetch("/usuarios/funcskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO funcskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        skatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(skatista.skatistabd);
+                        sessionStorage.SKATISTA = skatista.skatistabd;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+        function funcnoskatista() {
+            fetch("/usuarios/funcnoskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO funcnoskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        noskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(noskatista.noskatistabd);
+                        sessionStorage.NOSKATISTA = noskatista.noskatistabd;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+    </script>
+
+</head>
+
+<body id="back-metric" onload="atualizarFeed(), funcskatista(), funcnoskatista()">
+    <div class="header">
+        <div class="container">
+            <h1>Skatista </h1>
+            <ul class="navbar">
+
+                <li> <a href="user.html">Inicio</a></li>
+                <li><a href="home.html">Votação</a></li>
+                <li class="agora"><a href="./login.html">Finalizar sessão</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Análise dos Gráficos</h2>
+    <div class="content">
+        <div class='a'>
+            <div class="graf" id='graficoinstrumento' tyle="display: block;">
+                <canvas id="myChartbar1"></canvas>
+            </div>
+            <div id='graficomusico' class="dash" style="display: none;">
+                <div id="piechart" heigth='400px' width='400px'></div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class='posibotao'>
+        <button class='btn1' onclick='sumir()'>Ver a quantidade de skatista!</button>
+        <button class='btn1' onclick='aparecer()'>Ver modalidades favoritas</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sumir() {
+        graficoinstrumento.style.display = "none"
+        graficomusico.style.display = "block"
+    }
+
+    function aparecer() {
+        graficoinstrumento.style.display = "block"
+        graficomusico.style.display = "none"
+    }
+
+    function atualizarFeed() {
+
+        fetch("/modalidade/pegar/", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var streetzinho = (resposta[0].nome); // 
+                    var vertzinho = (resposta[1].nome);
+                    var bowlzinho = (resposta[2].nome);
+                    var freestylezin = (resposta[3].nome);
+                    var downhillzin = (resposta[4].nome);
+
+
+
+                    var ctx = document.getElementById('myChartbar1').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Street', 'Vert', 'Bowl', 'Freestyle', 'Downhill'],
+                            datasets: [{
+                                label: 'nome',
+                                data: [streetzinho, vertzinho, bowlzinho, freestylezin, downhillzin],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132)',
+                                    'rgba(54, 162, 235)',
+                                    'rgba(255, 206, 86)',
+                                    'rgba(75, 192, 192)',
+                                    'rgba(153, 102, 255)',
+                                    'rgba(255, 159, 64)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132)',
+                                    'rgba(54, 162, 235)',
+                                    'rgba(255, 206, 86)',
+                                    'rgba(75, 192, 192)',
+                                    'rgba(153, 102, 255)',
+                                    'rgba(255, 159, 64)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            },
+                            maintainAspectRatio: false
+                        }
+                    });
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+</script>

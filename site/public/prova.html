@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  
+        Rodadas máximas:
+        <input id="input_qtd_partidas" type="number" /><br />
+   
+
+    <button onclick="RealizarPartida()">Realizar partida</button>
+
+    <h3>Partidas que você deseja relembrar</h3>
+
+    <label for="input_inicio">Início:</label>
+    <input id="input_inicio" />
+    <label for="input_fim">Fim:</label>
+    <input id="input_fim" />
+
+    <button onclick="relembrarAsPartidas()">Relembrar</button>
+    
+    <div>
+        <h2>Painel</h2>
+
+        <div id="div_RodadaAtual"></div>
+        <br>
+        <br>
+        <div id="div_somaJogadorUm"></div>
+        
+        <div id="div_somaJogadorDois"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    /Vetores/
+    var PartidasJogadorUm = []
+    var PartidasJogadorDois = []
+    var IntevaloPartidas=[]
+
+    /*Função RealizarPartida */
+    function RealizarPartida() {
+
+        /Variaveis e Limpandos as Div/
+        var QuantidadePartidas = input_qtd_partidas.value
+        var SomaPartidasJogadorUm = 0
+        var SomaPartidasJogadorDois = 0
+    
+        div_somaJogadorDois.innerHTML = ``
+        div_somaJogadorUm.innerHTML = ``
+
+        /*Validações */
+        if (QuantidadePartidas <= 0) {
+            alert(`Número de partidas inválidos`)
+        }
+        else if (PartidasJogadorUm.length >= QuantidadePartidas && PartidasJogadorDois.length >= QuantidadePartidas) {
+            alert(`Numero de rodadas excedidas`)
+
+        }
+
+        /* For */
+        else {
+            for (var Rodada = 1; Rodada <= QuantidadePartidas; Rodada += 1) {
+
+                var resultado = parseInt(Math.random() * 10) + 1
+                var resultado2 = parseInt(Math.random() * 10) + 1
+
+                PartidasJogadorUm.push(resultado)
+                PartidasJogadorDois.push(resultado2)
+
+            div_RodadaAtual.innerHTML += ` <br>Rodada: ${Rodada} <br> <br>Jogador 1: ${PartidasJogadorUm[Rodada - 1]} <br> Jogador 2:  ${PartidasJogadorDois[Rodada-1]} <br>`
+            
+
+            
+            }
+
+            for (var RepetiçaoJogadorUm = 0; RepetiçaoJogadorUm < PartidasJogadorUm.length; RepetiçaoJogadorUm++) {
+
+                SomaPartidasJogadorUm += PartidasJogadorUm[RepetiçaoJogadorUm]
+                div_somaJogadorUm.innerHTML = `Total Jogador 1: ${SomaPartidasJogadorUm}`
+
+            }
+            for (var RepetiçaoJogadorDois = 0; RepetiçaoJogadorDois < PartidasJogadorDois.length; RepetiçaoJogadorDois++) {
+
+                SomaPartidasJogadorDois += PartidasJogadorDois[RepetiçaoJogadorDois]
+                div_somaJogadorDois.innerHTML = `Total Jogador 2: ${SomaPartidasJogadorDois}`
+
+            }
+        }}
+        /Fim da função rodadas maximas/
+
+
+        /* Início da função RelembrarPartida */
+        function relembrarAsPartidas() {
+            /Variaveis/
+            var inicio = input_inicio.value
+            var fim = input_fim.value
+            
+            PartidasJogadorUm.slice(inicio)
+            PartidasJogadorDois.slice(fim) 
+
+            
+    
+
+            
+            
+        }
+
+
+
+    
+</script>
