@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'font-oldschool' ;
+    src: url(../Assets/fonts/New\ Athletic\ M54.ttf) format('truetype');
+    font-size: normal;
+    font-weight: normal;
+}
+
 body{
     
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(107, 103, 103));
@@ -211,7 +218,7 @@ margin-left: -50%;
     font-size: large;
     width: 30%;
     padding: 32px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'font-oldschool';
     height: 84%;
     color: white;
     margin-top: -48px;
@@ -221,7 +228,7 @@ margin-left: -50%;
 }
 
 .Curiosidades{
-   
+   font-family: 'font-oldschool';
     display: flex;
     font-size: large;
     width: 30%;
@@ -229,7 +236,7 @@ margin-left: -50%;
     height: 84%;
     position: relative;
     left: 58%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
     margin-top: 10%;
 }
 
@@ -238,6 +245,7 @@ margin-left: -50%;
     position: absolute;
     left: 58%;
     color: white;
+    font-family: 'font-oldschool';
   
    margin-top: 6%;
    font-size: 45px;
@@ -302,9 +310,11 @@ margin-left: -50%;
     margin-top: 25vh;
     margin-left: 15%;
     font-size: 45px;
+    font-family: 'font-oldchool';
 }
 .social h1{
     color: white;
+    font-family: 'font-oldschool';
    
 }
 

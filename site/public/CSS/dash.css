@@ -1,40 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap%27');
 
 body{
   margin: 0;
   padding: 0;
   /* background-color:rgba(38, 105, 136, 0.9); */
-  font-family: 'Montserrat';
-  background-image: url(../notas_musicais_-_papel_de_parede_do_tema_musical\ Papel\ de\ parede__1024x768[10wallpaper.com].jpg);
+  
+
   background-repeat: no-repeat;
   background-size: cover;
 }
-.header {
-  color: white;
-  border-bottom: 3px solid #000;
-  top: 1300px;
-
-}
-
 .header .container {
-  display: flex;
-  justify-content: space-between;
-  background: rgba(0, 0, 0);
+  margin-top: 4.2rem;
+  padding-top: 0;
+  display: inline-flex;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+}
+.header ul li a {
+    
+  font-weight: 600;
+  font-family: "Halis GR";
+  text-decoration: none;
+  color: #000000;
+  font-size: 13px;
+  margin: auto;
+  letter-spacing: 1px;
+  will-change: opacity;
+  z-index: 2;
+  cursor: pointer;
 }
 
-.header a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 10px;
+
+.header h1 {
+  color: rgb(0, 0, 0);
+  margin-right: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.header h1{
-    font-size: 35px;
-    margin-left: 70px;
-    color: #fff;
-    -webkit-text-stroke: 1px #FFF;
-    -stroke: 1px #FFF;
-}   
+.campos {
+  list-style: none;
+  display: flex;
+  color: rgb(255, 255, 255);
+  gap: 80px;
+  align-items: center;
+}
+.header {
+  width: 100%;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
 .navbar {
   width: 60vh;
   display: flex;
@@ -76,12 +96,13 @@ section{
 h2{
   width: 42vw;
   margin-top: 20px;
-  margin-left: 300px;
+  margin-left: 450px;
   color: #000;
   /* background-color:#fff; */
   font-size: 30px;
   font-weight: bold;
   border-radius: 5px;
+  
 }
 .content{
   border: solid 4px;
@@ -170,7 +191,7 @@ h2{
     font-size: 15px;
 
     background: rgb(7, 2, 2);
-    color:  rgb(186, 151, 10);
+    color:  rgb(255, 255, 255);
     font-weight: bold;
 }
 .btn1:hover{

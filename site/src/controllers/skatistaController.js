@@ -6,9 +6,9 @@ var sessoes = [];
 
 
 function street(req, res) {
-    var nome = req.body.streetServer;
+    var modalidade = req.body.streetServer;
 
-    skatistaModel.street(nome)
+    skatistaModel.street(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -27,9 +27,9 @@ function street(req, res) {
 }
 
 function vert(req, res) {
-    var nome = req.body.streetServer;
+    var modalidade = req.body.streetServer;
 
-    skatistaModel.vert(nome)
+    skatistaModel.vert(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -49,9 +49,9 @@ function vert(req, res) {
 
 
 function bowl(req, res) {
-    var nome = req.body.bowlServer;
+    var modalidade = req.body.bowlServer;
 
-    skatistaModel.bowl(nome)
+    skatistaModel.bowl(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -71,10 +71,10 @@ function bowl(req, res) {
 
 
 function freestyle(req, res) {
-    var nome = req.body.freestyleServer;
+    var modalidade = req.body.freestyleServer;
 
 
-    skatistaModel.freestyle(nome)
+    skatistaModel.freestyle(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -94,10 +94,10 @@ function freestyle(req, res) {
 
 
 function downhill(req, res) {
-    var nome = req.body.bateriaServer;
+    var modalidade = req.body.bateriaServer;
 
 
-    skatistaModel.downhill(nome)
+    skatistaModel.downhill(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
