@@ -155,11 +155,11 @@
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var streetzinho = (resposta[0].nome); // 
-                    var vertzinho = (resposta[1].nome);
-                    var bowlzinho = (resposta[2].nome);
-                    var freestylezin = (resposta[3].nome);
-                    var downhillzin = (resposta[4].nome);
+                    var street = (resposta[0].nome); // 
+                    var vert = (resposta[1].nome);
+                    var bowl = (resposta[2].nome);
+                    var freestyle = (resposta[3].nome);
+                    var downhill = (resposta[4].nome);
 
 
 
@@ -169,8 +169,8 @@
                         data: {
                             labels: ['Street', 'Vert', 'Bowl', 'Freestyle', 'Downhill'],
                             datasets: [{
-                                label: 'Modalidade',
-                                data: [streetzinho, vertzinho, bowlzinho, freestylezin, downhillzin],
+                                label: 'nome',
+                                data: [street, vert, bowl, freestyle, downhill],
                                 backgroundColor: [
                                     'rgba(255, 99, 132)',
                                     'rgba(54, 162, 235)',

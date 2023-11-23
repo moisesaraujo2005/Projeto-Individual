@@ -1,5 +1,5 @@
 
-var skatistaModel = require("../models/modalidadeModel");
+var modalidadeModel = require("../models/modalidadeModel");
 
 
 var sessoes = [];
@@ -8,7 +8,7 @@ var sessoes = [];
 function street(req, res) {
     var modalidade = req.body.streetServer;
 
-    skatistaModel.street(modalidade)
+    modalidadeModel.street(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -29,7 +29,7 @@ function street(req, res) {
 function vert(req, res) {
     var modalidade = req.body.streetServer;
 
-    skatistaModel.vert(modalidade)
+    modalidadeModel.vert(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -51,7 +51,7 @@ function vert(req, res) {
 function bowl(req, res) {
     var modalidade = req.body.bowlServer;
 
-    skatistaModel.bowl(modalidade)
+    modalidadeModel.bowl(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -74,7 +74,7 @@ function freestyle(req, res) {
     var modalidade = req.body.freestyleServer;
 
 
-    skatistaModel.freestyle(modalidade)
+    modalidadeModel.freestyle(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -97,7 +97,7 @@ function downhill(req, res) {
     var modalidade = req.body.bateriaServer;
 
 
-    skatistaModel.downhill(modalidade)
+    modalidadeModel.downhill(modalidade)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -115,7 +115,7 @@ function downhill(req, res) {
 
 }
 function pegar(req, res) {
-    skatistaModel.pegar().then(function (resultado) {
+    modalidadeModel.pegar().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
