@@ -18,9 +18,18 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
+     
+        
+      
 
+}
+h1 img {
+    
+        width: 100px;
+
+        height: 90px;
+      
+}
 .campos{
     position: absolute;
     top: 50%;

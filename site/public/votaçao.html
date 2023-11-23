@@ -12,19 +12,42 @@
     <script src="./funcoes.js"></script>
     <script src="https://kit.fontawesome.com/258c1b4476.js" crossorigin="anonymous"></script>
     <title>Modalidades| Home</title>
+    <link rel="icon" href="Assets/Imagens/Element-Skateboards-94-removebg-preview.png">
+    
 </head>
-
+<style>
+        h1 img {
+  width: 100px;
+  height: 80px;
+  margin-right: 50px;
+}
+</style>
 <body onload="validarSessao()">
 
-    <!--header inicio-->ME
+    <!--header inicio-->
     <div class="header">
         <div class="container">
-            <h1><a href="index.html">Skate</a></h1>
-            <ul class="navbar">
-                <li><a href="user.html">Voltar a página inicial</a></li>
-                <li><a href="dash.html">Gráficos</a></li>
-                <li><a onclick="limparSessao()" href="login.html">Sair</a></li>
+            <div class="logo">
+                <h1>
+                    <a href="home.html">
+                        <img src="Assets/Imagens/Element-Skateboards-94-removebg-preview.png" alt="">
+                    </a>
+                    
+                    
+                </h1>
+            </div>
+            
+            <ul class="campos">
+                
+                
+            
+                <li> <a href="#cards" id="CardsLentidao">Skatistas </a></li>
+                <li><span> |</span></li>
+                <li><a class= "login" href="login.html"><span>Login</span></a></li>
+                <li><span>|</span></li>
+                <li><a class="cadastro" href="login.html"><span>Finalizar sessão</span></a></li>
             </ul>
+
         </div>
     </div>
 
@@ -46,8 +69,9 @@
     </div>
 
     <div class="container1">
-        
+            
             <div class="box">
+                
                 <img onclick="street()"  src="Assets/Imagens/kelvin-hoefler-tnz1papwfynk.webp" alt="STREET" >
             </div>
             
@@ -56,7 +80,7 @@
             </div>
             
             <div class="box">
-                <img onclick='bowl()'  src="Assets/Imagens/15484614505c4ba58a933a7_1548461450_3x2_md.jpg" alt="BOWL">
+                <img onclick='bowl()'  src="Assets/Imagens/bowl-skateboarder.jpg" alt="BOWL">
             </div>
           
             <div class="box">
@@ -65,7 +89,7 @@
             
            
             <div class="box">
-                <img onclick='downhill()'  src="Assets/Imagens/724942a596bec68e5f47c33d20d85b88-scaled.jpg" alt="CONTRABAIXO" >
+                <img onclick='downhill()'  src="Assets/Imagens/caixa-removebg-preview.png" alt="DOWNHILL" >
             </div>
     </div>
 

@@ -6,34 +6,85 @@ body{
     background-repeat: no-grepeat;
     background-size: cover ;
     font-family:'Montserrat';
-    background: linear-gradient(360deg, #000 2%, #fff 90%);
+    background: linear-gradient(360deg, #000 2%, #545252 90%);
     /* background: rgba(0,0,0,0.2); */
 }
  html{
   scroll-behavior: smooth;
 } 
-.header {
-  color: white;
-  border-bottom: 3px solid #000;
 
+
+
+
+
+
+
+    
+    
+ 
+.header {
+    width: 100%;
+  
+    margin-bottom: 80px;
 }
 
 .header .container {
-  display: flex;
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0.9);
+    margin-top: 4.2rem;
+    padding-top: 0;
+    display: inline-flex;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    z-index: 1;
 }
 
-.header a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 10px;
+
+
+
+
+
+
+
+.campos {
+    list-style: none;
+    display: flex;
+    color: rgb(255, 255, 255);
+    gap: 80px;
+    align-items: center;
 }
-.header h1 a{
-    font-size: 35px;
-    margin-left: 70px;
+
+
+.header ul li a {
+    
+    font-weight: 600;
+    font-family: "Halis GR";
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 13px;
+    margin: auto;
+    letter-spacing: 1px;
+    will-change: opacity;
+    z-index: 2;
+    cursor: pointer;
 }
+
+
+.header h1 {
+    color: rgb(255, 255, 255);
+    margin-right: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+
+
+
 .navbar {
   width: 60vh;
   display: flex;
@@ -93,6 +144,7 @@ img{
   position: absolute;
   left:50%;
   transform: translate(-50%);
+  color: white;
   font-weight: bold;
   font-size: 28px;
 }
@@ -108,7 +160,7 @@ img{
  
 }
 .footer-container {
-    background-color: #000;
+    background-color: #ebebeb;
     height: 30vh;
     width: 99.1vw;
     margin: 0;

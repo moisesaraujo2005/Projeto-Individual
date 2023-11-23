@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="assests2/assets/android-chrome-512x512.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="CSS/dash.css">
+    <link rel="icon" href="Assets/Imagens/Element-Skateboards-94-removebg-preview.png">
+    
     <title>Dash</title>
 
     
@@ -73,10 +75,13 @@
     <div class="header">
         <div class="container">
             <div class="logo">
+                
                 <h1>
-                    SKATE
-
-                    TECH
+                    <a href="home.html">
+                        <img src="Assets/Imagens/Element-Skateboards-94-removebg-preview.png"  >
+                
+                    </a>
+            
                 </h1>
             </div>
 
@@ -116,7 +121,7 @@
     </div>
     <div class='posibotao'>
         <button class='btn1' onclick='MostrarSkatista()'>Ver a quantidade de skatista!</button>
-        <button class='btn1' onclick="MostrarModalidades()">Ver modalidades favoritas</button>
+        <button class='btn1' onclick="MostrarModalidades()">Ver modalidades favoritas!</button>
     </div>
 </body>
 
@@ -131,7 +136,7 @@
                     var myChart = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: ['Skatista Sim' , 'Skatista não'],
+                            labels: ['Usúarios que são skatistas' , 'Uśuario que não são skatistas'],
                             datasets: [{
                                 label: 'nome',
                                 data: [Number(sessionStorage.getItem("SKATISTA")), Number(sessionStorage.getItem("NOSKATISTA"))],

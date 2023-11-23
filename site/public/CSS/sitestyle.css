@@ -20,7 +20,11 @@ body{
 
 
 
-    
+    h1 img {
+        width: 100px;
+        margin-right: 50px;
+        height: 90px;
+      }
     
  
 .header {
