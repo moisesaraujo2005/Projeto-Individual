@@ -36,7 +36,7 @@ function listar() {
 function funcskatista() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
 
-    var instrucao = `select count(skatista)  from usuario where skatista= 'sim'; `
+    var instrucao = `select count(skatista) as SkatistaSim  from usuario where skatista= 'sim'; `
         ;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -44,7 +44,7 @@ function funcskatista() {
 function funcnoskatista() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
 
-    var instrucao = `select count(skatista)  from usuario where skatista= 'nao'; `
+    var instrucao = `select count(skatista) as SkatistaNão  from usuario where skatista= 'nao'; `
         ;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

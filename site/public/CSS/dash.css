@@ -203,3 +203,7 @@ h2{
   top: 90%;
   left: 28%;
 }
+
+#Grafico2 {
+  display: none;
+}

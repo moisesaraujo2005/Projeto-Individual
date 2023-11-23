@@ -9,35 +9,18 @@
     <link rel="shortcut icon" href="assests2/assets/android-chrome-512x512.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="CSS/dash.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dash</title>
 
+    
 
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"> </script>
+          
+ 
 
-        function drawChart() {
 
-            var data = google.visualization.arrayToDataTable([
-                ['Skatista', ''],
-                ['Sim', Number(sessionStorage.SKATISTA)],
-                ['Não', Number(sessionStorage.NOSKATISTA)],
 
-            ]);
-
-            var options = {
-                title: 'Quantidade de skatista'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
+    
 
     <script>
         function funcskatista() {
@@ -49,7 +32,8 @@
 
                         skatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
                         console.log(skatista.skatistabd);
-                        sessionStorage.SKATISTA = skatista.skatistabd;
+                        sessionStorage.SKATISTA = resposta[0].SkatistaSim
+
 
                     });
                 } else {
@@ -70,7 +54,7 @@
 
                         noskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
                         console.log(noskatista.noskatistabd);
-                        sessionStorage.NOSKATISTA = noskatista.noskatistabd;
+                        sessionStorage.NOSKATISTA = resposta[0].SkatistaNão;
 
                     });
                 } else {
@@ -85,27 +69,28 @@
 
 </head>
 
-<body id="back-metric" onload="atualizarFeed(), funcskatista(), funcnoskatista()">
+<body id="back-metric" onload=" atualizarFeed(), funcskatista(), funcnoskatista()">
     <div class="header">
         <div class="container">
             <div class="logo">
                 <h1>
                     SKATE
-                    
+
                     TECH
                 </h1>
             </div>
-            
+
             <ul class="campos">
-                
-                
+
+
                 <li> <a href="dash.html">Gráficos</a></li>
                 <li><span>|</span></li>
                 <li> <a href="#cards" id="CardsLentidao">Skatistas </a></li>
                 <li><span> |</span></li>
-                <li><a class= "login" href="votaçao.html"><span>Votação</span></a></li>
+                <li><a class="login" href="votaçao.html"><span>Votação</span></a></li>
                 <li><span>|</span></li>
-                <li><a class="cadastro" onclick="limparsessao()"   href="index.html"><span>Finalizar sessão</span></a></li>
+                <li><a class="cadastro" onclick="limparsessao()" href="index.html"><span>Finalizar sessão</span></a>
+                </li>
             </ul>
 
         </div>
@@ -114,10 +99,15 @@
     <h2>Análise dos Gráficos</h2>
     <div class="content">
         <div class='a'>
-            <div class="graf" id='graficoinstrumento' tyle="display: block;">
+            <div class="graf" id='graficoModalidade' tyle="display: block;">
+                <div id="Grafico1">
                 <canvas id="myChartbar1"></canvas>
             </div>
-            <div id='graficomusico' class="dash" style="display: none;">
+            <div id="Grafico2">
+                <canvas id="myChart"></canvas>
+            </div>
+            </div>
+            <div id='graficoSkate' class="dash" style="display: none;">
                 <div id="piechart" heigth='500px' width='500px'></div>
 
             </div>
@@ -125,24 +115,69 @@
 
     </div>
     <div class='posibotao'>
-        <button class='btn1' onclick='sumir()'>Ver a quantidade de skatista!</button>
-        <button class='btn1' onclick='aparecer()'>Ver modalidades favoritas</button>
+        <button class='btn1' onclick='MostrarSkatista()'>Ver a quantidade de skatista!</button>
+        <button class='btn1' onclick="MostrarModalidades()">Ver modalidades favoritas</button>
     </div>
 </body>
 
 </html>
 
 <script>
-    function sumir() {
-        graficoinstrumento.style.display = "none"
-        graficomusico.style.display = "block"
-    }
+    function MostrarSkatista() {
+        Grafico1.style.display="none"
+        Grafico2.style.display="block"
+        setTimeout(() =>{
+        var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Skatista Sim' , 'Skatista não'],
+                            datasets: [{
+                                label: 'nome',
+                                data: [Number(sessionStorage.getItem("SKATISTA")), Number(sessionStorage.getItem("NOSKATISTA"))],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132)',
+                                    'rgba(54, 162, 235)',
+                                    'rgba(255, 206, 86)',
+                                    'rgba(75, 192, 192)',
+                                    'rgba(153, 102, 255)',
+                                    'rgba(255, 159, 64)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 99, 132)',
+                                    'rgba(54, 162, 235)',
+                                    'rgba(255, 206, 86)',
+                                    'rgba(75, 192, 192)',
+                                    'rgba(153, 102, 255)',
+                                    'rgba(255, 159, 64)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            },
+                            maintainAspectRatio: false
+                        }
+                    });
 
-    function aparecer() {
-        graficoinstrumento.style.display = "block"
-        graficomusico.style.display = "none"
+                },200);
+  
     }
+    
+            
+</script>
 
+
+
+    <script>
+    function MostrarModalidades() {
+        Grafico1.style.display="block"
+        Grafico2.style.display="none "
+    }
     function atualizarFeed() {
 
         fetch("/modalidade/pegar/", {
@@ -214,6 +249,7 @@
 
 
     }
+    </script>
 
 
 
@@ -221,4 +257,3 @@
 
 
 
-</script>
