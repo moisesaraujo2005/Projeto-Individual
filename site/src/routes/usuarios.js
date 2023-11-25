@@ -21,4 +21,23 @@ router.get("/funcskatista", function (req, res) {
 });router.get("/funcnoskatista", function (req, res) {
     usuarioController.funcnoskatista(req, res);
 });
+
+
+router.get("/homemskatista", function (req, res) {
+    usuarioController.homemskatista(req, res);
+})
+
+router.get("/mulherskatista", function (req, res) {
+    usuarioController.mulherskatista(req, res);
+})
+
+
+router.get("/homemnoskatista", function (req, res) {
+    usuarioController.homemnoskatista(req, res);
+})
+
+router.get("/mulhernoskatista", function (req, res) {
+    usuarioController.mulhernoskatista(req, res);
+})
+
 module.exports = router;

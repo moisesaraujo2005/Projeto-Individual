@@ -24,54 +24,11 @@
 
     
 
-    <script>
-        function funcskatista() {
-            fetch("/usuarios/funcskatista").then(function (resposta) {
-                console.log("ESTOU NO THEN DO funcskatista()!")
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
-
-                        skatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
-                        console.log(skatista.skatistabd);
-                        sessionStorage.SKATISTA = resposta[0].SkatistaSim
-
-
-                    });
-                } else {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                }
-            }).catch(function (erro) {
-                console.log(erro);
-            })
-            return false;
-        }
-
-        function funcnoskatista() {
-            fetch("/usuarios/funcnoskatista").then(function (resposta) {
-                console.log("ESTOU NO THEN DO funcnoskatista()!")
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
-
-                        noskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
-                        console.log(noskatista.noskatistabd);
-                        sessionStorage.NOSKATISTA = resposta[0].SkatistaNão;
-
-                    });
-                } else {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                }
-            }).catch(function (erro) {
-                console.log(erro);
-            })
-            return false;
-        }
-    </script>
+   
 
 </head>
 
-<body id="back-metric" onload=" atualizarFeed(), funcskatista(), funcnoskatista()">
+<body id="back-metric" onload=" atualizarFeed(), funcskatista(), funcnoskatista(), homemskatista(), mulherskatista() , homemnoskatista(), mulhernoskatista()">
     <div class="header">
         <div class="container">
             <div class="logo">
@@ -90,7 +47,7 @@
 
                 <li> <a href="dash.html">Gráficos</a></li>
                 <li><span>|</span></li>
-                <li> <a href="#cards" id="CardsLentidao">Skatistas </a></li>
+                <li> <a href="#cards" id="CardsLentidao">Saúde e Bem-Estar </a></li>
                 <li><span> |</span></li>
                 <li><a class="login" href="votaçao.html"><span>Votação</span></a></li>
                 <li><span>|</span></li>
@@ -101,7 +58,7 @@
         </div>
     </div>
 
-    <h2>Análise dos Gráficos</h2>
+   
     <div class="content">
         <div class='a'>
             <div class="graf" id='graficoModalidade' tyle="display: block;">
@@ -110,6 +67,10 @@
             </div>
             <div id="Grafico2">
                 <canvas id="myChart"></canvas>
+            </div>
+
+            <div id="Grafico3">
+                <canvas id="myChart2"></canvas>
             </div>
             </div>
             <div id='graficoSkate' class="dash" style="display: none;">
@@ -122,6 +83,7 @@
     <div class='posibotao'>
         <button class='btn1' onclick='MostrarSkatista()'>Ver a quantidade de skatista!</button>
         <button class='btn1' onclick="MostrarModalidades()">Ver modalidades favoritas!</button>
+        <button class="btn1" onclick="MostrarSexo()">Mostrar Skatistas!</button>
     </div>
 </body>
 
@@ -131,14 +93,15 @@
     function MostrarSkatista() {
         Grafico1.style.display="none"
         Grafico2.style.display="block"
+        Grafico3.style.display="none"
         setTimeout(() =>{
         var ctx = document.getElementById('myChart').getContext('2d');
                     var myChart = new Chart(ctx, {
                         type: 'doughnut',
                         data: {
-                            labels: ['Usúarios que são skatistas' , 'Uśuario que não são skatistas'],
+                            labels: ['Usúarios que não são skatistas' , 'Uśuario que são skatistas'],
                             datasets: [{
-                                label: 'nome',
+                                label: 'Quantidade',
                                 data: [Number(sessionStorage.getItem("SKATISTA")), Number(sessionStorage.getItem("NOSKATISTA"))],
                                 backgroundColor: [
                                     'rgba(255, 99, 132)',
@@ -182,6 +145,7 @@
     function MostrarModalidades() {
         Grafico1.style.display="block"
         Grafico2.style.display="none "
+        Grafico3.style.display="none"
     }
     function atualizarFeed() {
 
@@ -205,7 +169,7 @@
 
                     var ctx = document.getElementById('myChartbar1').getContext('2d');
                     var myChart = new Chart(ctx, {
-                        type: 'doughnut',
+                        type: 'pie',
                         data: {
                             labels: ['Street', 'Vert', 'Bowl', 'Freestyle', 'Downhill'],
                             datasets: [{
@@ -254,6 +218,188 @@
 
 
     }
+    </script>
+<script>
+function MostrarSexo() {
+    Grafico1.style.display="none"
+    Grafico2.style.display="none"
+    Grafico3.style.display="block"
+    setTimeout(() =>{
+    var ctx = document.getElementById('myChart2').getContext('2d');
+                var myChart2 = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Homens skatistas' , 'Mulheres skatistas', 'Homens Não Skatista' , 'Mulheres Não Skatistas'],
+                        datasets: [{
+                            label: 'Quantidade', 
+                            data: [Number(sessionStorage.getItem("HOMEMSKATISTA")), Number(sessionStorage.getItem("MULHERSKATISTA")),Number(sessionStorage.getItem("HOMEMNOSKATISTA")),Number(sessionStorage.getItem("MULHERNOSKATISTA"))],
+                            backgroundColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)',
+                                'rgba(75, 192, 192)',
+                                'rgba(153, 102, 255)',
+                                'rgba(255, 159, 64)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132)',
+                                'rgba(54, 162, 235)',
+                                'rgba(255, 206, 86)',
+                                'rgba(75, 192, 192)',
+                                'rgba(153, 102, 255)',
+                                'rgba(255, 159, 64)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        maintainAspectRatio: false
+                    }
+                });
+
+            }
+            
+            ,200);
+
+}
+</script>
+
+<script>
+        function funcskatista() {
+            fetch("/usuarios/funcskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO funcskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        skatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(skatista.skatistabd);
+                        sessionStorage.SKATISTA = resposta[0].SkatistaSim
+
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+        function funcnoskatista() {
+            fetch("/usuarios/funcnoskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO funcnoskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        noskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(noskatista.noskatistabd);
+                        sessionStorage.NOSKATISTA = resposta[0].SkatistaNão;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+        function homemskatista() {
+            fetch("/usuarios/homemskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO homemskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        homemskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(homemskatista.homemskatistabd);
+                        sessionStorage.HOMEMSKATISTA = resposta[0].SkatistaH;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+
+        function mulherskatista() {
+            fetch("/usuarios/mulherskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO mulherskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        mulherskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(mulherskatista.mulherskatistabd);
+                        sessionStorage.MULHERSKATISTA = resposta[0].SkatistaM;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+
+        function homemnoskatista() {
+            fetch("/usuarios/homemnoskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO homemnoskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        homemnoskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(homemnoskatista.homemnoskatistabd);
+                        sessionStorage.HOMEMNOSKATISTA = resposta[0].NoSkatistaH;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
+
+
+
+        function mulhernoskatista() {
+            fetch("/usuarios/mulhernoskatista").then(function (resposta) {
+                console.log("ESTOU NO THEN DO mulhernoskatista()!")
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+                        mulhernoskatista = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                        console.log(mulhernoskatista.mulhernoskatistabd);
+                        sessionStorage.MULHERNOSKATISTA = resposta[0].NoSkatistaM;
+
+                    });
+                } else {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+            return false;
+        }
     </script>
 
 

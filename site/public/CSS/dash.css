@@ -27,7 +27,7 @@ body{
   font-family: "Halis GR";
   text-decoration: none;
   color: #dccdcd;
-  font-size: 13px;
+  font-size: 15px;
   margin: auto;
   letter-spacing: 1px;
   will-change: opacity;
@@ -115,73 +115,7 @@ h2{
     background-color: rgb(255, 255, 255, 0.9);
    
 }
-#graficomusico{
 
-  max-width: 40%;
-  
-  height: auto; 
-  
-  display: table; 
-  
-  border-collapse: separate;
-  
-  }
-  
-  .footer-container {
-    background-color: #000;
-    height: 30vh;
-    width: 99.1vw;
-    margin: 0;
-    padding-top: 40px;
-    color: #fff;    
-  }
-   .footer-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-container h3{
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
-    -webkit-text-stroke: 1px #FFF;
-    -stroke: 1px #FFF;
-    text-decoration: none;
-  }
-  .footer-container p {
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 8px;
-    font-size: 14px;
-  }
-  .socials {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-    margin-right: 50px;
-  }
-  .socials li{
-        margin: 0 10px;
-  }
-  .socials a{
-    text-decoration: none;
-    color: #fff;
-  }
-  .socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
-  }
-  .socials a:hover i{
-    color: rgba(255, 0, 0, 0.5);
-  }
-  .footer .container h4 {
-      margin-top:0px;
-  } 
   .btn1{
     padding: 0px;
     width: 20vw;
@@ -202,7 +136,7 @@ h2{
 .posibotao{
   position:absolute;
   top: 90%;
-  left: 28%;
+  left: 17%;
 }
 
 #Grafico2 {

@@ -51,10 +51,53 @@ function funcnoskatista() {
 }
 
 
+function homemskatista() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+
+    var instrucao = `select count(skatista) as SkatistaH from usuario where skatista= 'sim' and sexo='Masculino'; `
+        ;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mulherskatista() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+
+    var instrucao = `select count(skatista) as SkatistaM from usuario where skatista= 'sim' and sexo='Feminino'; `
+        ;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+function homemnoskatista() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+
+    var instrucao = `select count(skatista) as NoSkatistaH from usuario where skatista= 'nao' and sexo='Masculino'; `
+        ;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function mulhernoskatista() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+
+    var instrucao = `select count(skatista) as NoSkatistaM from usuario where skatista= 'nao' and sexo='Feminino'; `
+        ;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     funcskatista,
-    funcnoskatista
+    funcnoskatista,
+    homemskatista,
+    mulherskatista,
+    mulhernoskatista,
+    homemnoskatista
 };

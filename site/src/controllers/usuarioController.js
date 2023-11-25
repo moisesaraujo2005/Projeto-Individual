@@ -108,11 +108,86 @@ function funcskatista(req, res) {
                 );
         }
 
+        function homemskatista(req, res) {
+            usuarioModel.homemskatista()
+                .then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(204).send("Nenhum resultado encontrado!")
+                    }
+                }).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        }
 
+        function mulherskatista(req, res) {
+            usuarioModel.mulherskatista()
+                .then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(204).send("Nenhum resultado encontrado!")
+                    }
+                }).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        }
+
+
+        function mulhernoskatista(req, res) {
+            usuarioModel.mulhernoskatista()
+                .then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(204).send("Nenhum resultado encontrado!")
+                    }
+                }).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        }
+
+
+     
+
+
+        function homemnoskatista(req, res) {
+            usuarioModel.homemnoskatista()
+                .then(function (resultado) {
+                    if (resultado.length > 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(204).send("Nenhum resultado encontrado!")
+                    }
+                }).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        }
 
 module.exports = {
     cadastrar,
     entrar,
     funcnoskatista,
-    funcskatista
+    funcskatista,
+    mulherskatista,
+    homemskatista,
+    homemnoskatista,
+    mulhernoskatista
 }
