@@ -34,7 +34,7 @@ function listar() {
 }
 
 function funcskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funskatista()");
 
     var instrucao = `select count(skatista) as SkatistaSim  from usuario where skatista= 'sim'; `
         ;
@@ -42,7 +42,7 @@ function funcskatista() {
     return database.executar(instrucao);
 }
 function funcnoskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcnoskatista()");
 
     var instrucao = `select count(skatista) as SkatistaNão  from usuario where skatista= 'nao'; `
         ;
@@ -52,7 +52,7 @@ function funcnoskatista() {
 
 
 function homemskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function homemskatista()");
 
     var instrucao = `select count(skatista) as SkatistaH from usuario where skatista= 'sim' and sexo='Masculino'; `
         ;
@@ -61,7 +61,7 @@ function homemskatista() {
 }
 
 function mulherskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mulherskatista()");
 
     var instrucao = `select count(skatista) as SkatistaM from usuario where skatista= 'sim' and sexo='Feminino'; `
         ;
@@ -71,7 +71,7 @@ function mulherskatista() {
 
 
 function homemnoskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function homemnoskatista()");
 
     var instrucao = `select count(skatista) as NoSkatistaH from usuario where skatista= 'nao' and sexo='Masculino'; `
         ;
@@ -80,7 +80,7 @@ function homemnoskatista() {
 }
 
 function mulhernoskatista() {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function funcmusico()");
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mulhernoskatista()");
 
     var instrucao = `select count(skatista) as NoSkatistaM from usuario where skatista= 'nao' and sexo='Feminino'; `
         ;

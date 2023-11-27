@@ -43,7 +43,7 @@
             
                 <li> <a href="#cards" id="CardsLentidao">Skatistas </a></li>
                 <li><span> |</span></li>
-                <li><a class= "login" href="login.html"><span>Login</span></a></li>
+                <li><a class= "sáude" href="saude.html"><span>Sáude</span></a></li>
                 <li><span>|</span></li>
                 <li><a class="cadastro" href="login.html"><span>Finalizar sessão</span></a></li>
             </ul>
@@ -61,8 +61,8 @@
                     <h3>Bem vindo, <b id="b_usuario"></b></h3>
                 </div>
                 <div class='saudacao'>
-                    Bem vindo a votação de modalidade <br>
-                        Selecione o seu favorito.
+                    Bem vindo a votação de modalidade 
+                        
                 </div>
             </div>
         </div>
@@ -71,24 +71,28 @@
     <div class="container1">
             
             <div class="box">
-                
+                <p>Street</p>
                 <img onclick="street()"  src="Assets/Imagens/kelvin-hoefler-tnz1papwfynk.webp" alt="STREET" >
             </div>
-            
+           
             <div class="box">
+                <p> Vert</p>
                 <img onclick= "vert()" src="Assets/Imagens/gui-khury.webp" alt="VERT" >
-            </div>
-            
-            <div class="box">
-                <img onclick='bowl()'  src="Assets/Imagens/bowl-skateboarder.jpg" alt="BOWL">
             </div>
           
             <div class="box">
+                <p>Bowl</p>
+                <img onclick='bowl()'  src="Assets/Imagens/bowl-skateboarder.jpg" alt="BOWL">
+            </div>
+            
+            <div class="box">
+                <p>FreeStyle</p>
                 <img onclick='freestyle()' src="Assets/Imagens/250px-Tailwheelie.jpg" alt="FREESTYLE" >
             </div>
             
-           
+            
             <div class="box">
+                <p>DownHill</p>
                 <img onclick='downhill()'  src="Assets/Imagens/caixa-removebg-preview.png" alt="DOWNHILL" >
             </div>
     </div>
@@ -265,25 +269,6 @@ fetch("/modalidade/downhill", {
 
 }
 
-function validarSessao() {
-    // aguardar();
 
-    var email = sessionStorage.EMAIL_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
-
-    var h1LoginUsuario = document.getElementById("h1_login_usuario");
-
-    if (email != null && nome != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
-        if (h1LoginUsuario != undefined) {
-            h1LoginUsuario.innerHTML = email;
-        }
-        b_usuario.innerHTML = nome;
-
-        // finalizarAguardar();
-    } else {
-        window.location = "../login.html";
-    }
-}
 
 </script>
