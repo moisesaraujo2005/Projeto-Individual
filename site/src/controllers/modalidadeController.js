@@ -27,7 +27,7 @@ function street(req, res) {
 }
 
 function vert(req, res) {
-    var modalidade = req.body.streetServer;
+    var modalidade = req.body.vertServer;
 
     modalidadeModel.vert(modalidade)
         .then(
@@ -94,7 +94,7 @@ function freestyle(req, res) {
 
 
 function downhill(req, res) {
-    var modalidade = req.body.bateriaServer;
+    var modalidade = req.body.downhillServer;
 
 
     modalidadeModel.downhill(modalidade)
