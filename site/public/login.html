@@ -36,6 +36,9 @@
 
 
     <button onclick="entrar()" class="botaoLogin">Login</button> </div>
+    <div id="div_aguardar" class="loading-div">
+        <img src="Assets/Imagens/gif.gif" id="loading-gif">
+    </div>
 </body>
 </html>
 <script>
@@ -85,6 +88,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
+                        alert(`Login com sucesso!`)
                         window.location = "home.html";
                     }, 1000); // apenas para exibir o loading
 
@@ -106,4 +110,27 @@
 
         return false;
     }
+    function finalizarAguardar(texto) {
+    var divAguardar = document.getElementById("div_aguardar");
+    divAguardar.style.display = "none";
+
+    var divErrosLogin = document.getElementById("div_erros_login");
+    if (texto) {
+        divErrosLogin.innerHTML = texto;
+    }
+}
+
+
+// modal
+function mostrarModal() {
+    var divModal = document.getElementById("div_modal");
+    divModal.style.display = "flex";
+}
+
+function fecharModal() {
+    var divModal = document.getElementById("div_modal");
+    divModal.style.display = "none";
+}
+  
+
 </script>

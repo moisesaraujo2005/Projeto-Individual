@@ -56,24 +56,6 @@ h1 img {
     width: 50px;
   }
 
-.skate{
-    height: 239px;
-    position: absolute;
-
-    
-    right: -80px;
-
-    animation: skate-animation 6s infinite linear;
-}
-
-@keyframes skate-animation {
-    from{
-        left: 0;
-    }
-    to {
-        left: 80%;
-    }
-}
 
 
 
@@ -132,3 +114,15 @@ transition: 750ms;
 .div_senha{
     color: rgb(231, 81, 81);
 }
+
+.loading-div {
+    width: 50px;
+    /* border: 3px solid pink; */
+    margin: auto;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
