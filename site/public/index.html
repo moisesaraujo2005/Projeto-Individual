@@ -126,7 +126,7 @@ Andar de skate se tornou, ao longo dos anos, uma prática que vai além de andar
             <span>Luan Vilanova de Oliveira mais conhecido como Luan Oliveira (Porto Alegre, 22 de setembro de 1990) é um skatista profissional brasileiro e um dos mais influentes skatistas da sua geração de skaters no Brasil</span>
             <br>
             <div id="div_luanOliveira"  style="color: white;"></div>
-            <button onclick="LuanOliveira()">Mais</button>
+            <button id="BotaoLuan" onclick="LuanOliveira()">Mais</button>
             
         </section>
         <section class="card">
@@ -137,7 +137,7 @@ Andar de skate se tornou, ao longo dos anos, uma prática que vai além de andar
             <span>Skatista profissional conhecido por seus vídeos de manobras e suas atuações em diversas competições. Já foi patrocinado por DC Shoes, Mountain Dew, Grizzly Grip e Diamond.</span> 
             <br>
             <div id="div_TiagoLemos" style="color: white;"></div>
-            <button onclick="TiagoLemos()">Mais</button>
+            <button id="BotaoTiago" onclick="TiagoLemos()">Mais</button>
             
         </section>
         <section class="card">
@@ -147,7 +147,7 @@ Andar de skate se tornou, ao longo dos anos, uma prática que vai além de andar
             <h3>Gabriel Fortunato</h3>
             <span>Skatista brasileiro conhecido por postar vários clipes andando de skate para os seus mais de 330.000 seguidores no Instagram. Ele já foi patrocinado por diversas empresas</span>
             <div id="div_GabrielFortunato" style="color: white;"></div>
-            <button onclick="GabrielFortunato()">Mais</button>
+            <button id="BotaoFortunato" onclick="GabrielFortunato()">Mais</button>
             
             </section>
     </div>
@@ -156,27 +156,61 @@ Andar de skate se tornou, ao longo dos anos, uma prática que vai além de andar
 
 </script>
 <script>
-    
+        var situacao= false
     function LuanOliveira() {
-        div_luanOliveira.innerHTML=``
-        div_luanOliveira.innerHTML+=`Em sua primeira participação nos Street League no skate street (já tinha participado dos X Games no skate real street), Luan conseguiu a segunda colocação. <br> Na primeira linha da disputa, Luan estava praticamente sem chance de classificação, quando em sua última volta, acertou uma linha composta de: nollie backside flip seguido de um extenso frontside flip sobre o corrimão, o que o ajudou a garantir sua vaga na grande final ao lado de Nyjah Huston, Ryan Decenzo, Ryan Sheckler e Chaz Ortiz. 
+        if(situacao==false) {
+            situacao=true
+            BotaoLuan.innerHTML=`Menos`
+        div_luanOliveira.innerHTML=`Em sua primeira participação nos Street League no skate street (já tinha participado dos X Games no skate real street), Luan conseguiu a segunda colocação. <br> Na primeira linha da disputa, Luan estava praticamente sem chance de classificação, quando em sua última volta, acertou uma linha composta de: nollie backside flip seguido de um extenso frontside flip sobre o corrimão, o que o ajudou a garantir sua vaga na grande final ao lado de Nyjah Huston, Ryan Decenzo, Ryan Sheckler e Chaz Ortiz. 
 Na grande final, Luan não conseguiu sair melhor que Nyjah Huston e ficou com o segundo lugar, já a terceira colocação ficou com Ryan Sheckler.
 Em 2015, Luan inicia o ano ganhando o Tampa Pro (um dos mais tradicionais campeonatos de skate street) pela segunda vez, após isso venceu também a segunda etapa da Street League, em los angeles, e na terceira etapa em New Jersey, conquistou o bi-campeonato, com Nyjah Huston em segundo e o brasileiro estreante Kelvin Hoefler em terceiro.`
     }
+    
+    else {
+        
+        situacao=false
+        BotaoLuan.innerHTML=`Mais`
+        div_luanOliveira.innerHTML=``
+    }
+
+
+
+}
+
+
+
 
     function TiagoLemos() {
-        div_TiagoLemos.innerHTML=`Tiago Lemos é um skatista profissional que conseguiu, com base em suas habilidades, estilo único e manobras impactantes, ser um dos principais skatistas brasileiros. Para se ter uma ideia, mesmo sendo novo e estando em “início” de carreira, Tiago conquistou o prêmio de Skatista do Ano em 2015. 
+        if(situacao==false) {
+            situacao=true
+            BotaoTiago.innerHTML=`Menos`
+            div_TiagoLemos.innerHTML=`Tiago Lemos é um skatista profissional que conseguiu, com base em suas habilidades, estilo único e manobras impactantes, ser um dos principais skatistas brasileiros. Para se ter uma ideia, mesmo sendo novo e estando em “início” de carreira, Tiago conquistou o prêmio de Skatista do Ano em 2015. 
 
 Essa pesquisa foi feita pela Revista CemporcentoSKATE, que abriu uma votação online, onde os internautas tinham que eleger o melhor do ano e, é claro, o título não poderia ter ido para outra pessoa. 
 
 Essa e as demais conquistas que Tiago Lemos conseguiu foram alcançadas devido ao seu talento nato, porém, também à sua trajetória repleta de dedicação ao esporte. 
 
-`
-    }
+`}
+    else {
+        situacao=false
+        div_TiagoLemos.innerHTML=``
+        BotaoTiago.innerHTML=`Mais`
+    }}
+    
     function GabrielFortunato() {
-        div_GabrielFortunato.innerHTML=`O skatista Gabriel Fortunato, de 14 anos, é a nova sensação do skate no Alto Tietê. Nascido em Mogi das Cruzes, o garoto, que atualmente mora em Suzano com a mãe,
+        if(situacao==false) {
+            BotaoFortunato.innerHTML=`Menos`
+            situacao=true
+            div_GabrielFortunato.innerHTML=`O skatista Gabriel Fortunato, de 14 anos, é a nova sensação do skate no Alto Tietê. Nascido em Mogi das Cruzes, o garoto, que atualmente mora em Suzano com a mãe,
          uma irmã e o irmão Davison, de 20 anos, já conta com dois patrocínios e está prestes a fechar o terceiro com uma das maiores empresas esportivas do mundo`
         
+        }
+        else {
+            situacao=false 
+            BotaoFortunato.innerHTML=`Mais`
+            div_GabrielFortunato.innerHTML=``
+        }
+       
     }
 
     

@@ -228,7 +228,7 @@ function MostrarSexo() {
                 var myChart2 = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Homens skatistas' , 'Mulheres skatistas', 'Homens Não Skatista' , 'Mulheres Não Skatistas'],
+                        labels: ['Homens skatistas' , 'Mulheres skatistas', 'Homens Não Skatistas' , 'Mulheres Não Skatistas'],
                         datasets: [{
                             label: 'Quantidade', 
                             data: [Number(sessionStorage.getItem("HOMEMSKATISTA")), Number(sessionStorage.getItem("MULHERSKATISTA")),Number(sessionStorage.getItem("HOMEMNOSKATISTA")),Number(sessionStorage.getItem("MULHERNOSKATISTA"))],
